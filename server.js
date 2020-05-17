@@ -7,6 +7,7 @@ const fs = require("fs");
 const app = express();  
 app.use(express.json()); // let express know that incomming/post is JSON
 app.use(express.urlencoded({extended:true})); //required when taking data from HTML forms
+app.use(express.static("public"));
 
 const PORT = process.env.PORT || 8080;  // Heroku PORT config 
 
