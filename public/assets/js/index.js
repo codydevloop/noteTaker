@@ -15,6 +15,8 @@ var getNotes = function() {
   return $.ajax({
     url: "/api/notes",
     method: "GET"
+  }).then(function(response){
+    return response;
   });
 };
 
@@ -109,20 +111,25 @@ var handleRenderSaveBtn = function() {
 // Render's the list of note titles
 var renderNoteList = function(notes) {
   $noteList.empty();
-
+  parsedNotes = JSON.parse(notes);
+  // console.log(parsedNotes[0].title);
   var noteListItems = [];
 
-  for (var i = 0; i < notes.length; i++) {
-    var note = notes[i];
-
-    var $li = $("<li class='list-group-item'>").data(note);
-    var $span = $("<span>").text(note.title);
-    var $delBtn = $(
+  for (let i = 0; i < parsedNotes.length; i++) {
+    let note = parsedNotes[i].text;
+    // console.log(note);
+    let $li = $("<li class='list-group-item'>"); 
+    // $li.data = note;
+    let $span = $("<span>").text(parsedNotes[i].title);
+    let $delBtn = $(
       "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
     );
 
     $li.append($span, $delBtn);
+  
     noteListItems.push($li);
+    $li.data = note;
+
   }
 
   $noteList.append(noteListItems);
@@ -131,6 +138,7 @@ var renderNoteList = function(notes) {
 // Gets notes from the db and renders them to the sidebar
 var getAndRenderNotes = function() {
   return getNotes().then(function(data) {
+    // console.log(data); // data is good here
     renderNoteList(data);
   });
 };
