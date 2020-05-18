@@ -8,8 +8,8 @@ router.get("/api/notes", (req, res) => {
         if (err){
             throw err;
         } 
-        res.json(data); //return all notes to user
-        console.log(data);
+        res.json(JSON.parse(data)); //return all notes to user
+        // console.log(data);
       });    
 });
 

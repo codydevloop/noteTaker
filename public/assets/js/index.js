@@ -9,6 +9,8 @@ const $noteList = $(".list-container .list-group");
 
 // activeNote is used to keep track of the note in the textarea
 var activeNote = {};
+// var localNotes = [];  //local copy of contents of db.json
+
 
 // A function for getting all notes from the db
 var getNotes = function() {
@@ -40,7 +42,7 @@ var deleteNote = function(id) {
 // If there is an activeNote, display it, otherwise render empty inputs
 var renderActiveNote = function() {
   $saveNoteBtn.hide();
-
+  // console.log(activeNote);
   if (activeNote.id) {
     $noteTitle.attr("readonly", true);
     $noteText.attr("readonly", true);
@@ -49,8 +51,8 @@ var renderActiveNote = function() {
   } else {
     $noteTitle.attr("readonly", false);
     $noteText.attr("readonly", false);
-    $noteTitle.val("");
-    $noteText.val("");
+    $noteTitle.val("no");
+    $noteText.val("id found");
   }
 };
 
@@ -88,6 +90,7 @@ var handleNoteDelete = function(event) {
 
 // Sets the activeNote and displays it
 var handleNoteView = function() {
+  //console.log(`${this}`);
   activeNote = $(this).data();
   renderActiveNote();
 };
@@ -111,16 +114,14 @@ var handleRenderSaveBtn = function() {
 // Render's the list of note titles
 var renderNoteList = function(notes) {
   $noteList.empty();
-  parsedNotes = JSON.parse(notes);
-  // console.log(parsedNotes[0].title);
+  // parsedNotes = JSON.parse(notes);
   var noteListItems = [];
 
-  for (let i = 0; i < parsedNotes.length; i++) {
-    let note = parsedNotes[i].text;
-    // console.log(note);
-    let $li = $("<li class='list-group-item'>"); 
+  for (let i = 0; i < notes.length; i++) {
+    let note = notes[i];
+    let $li = $("<li class='list-group-item'>").data(note); 
     // $li.data = note;
-    let $span = $("<span>").text(parsedNotes[i].title);
+    let $span = $("<span>").text(note.title);
     let $delBtn = $(
       "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
     );
@@ -128,7 +129,7 @@ var renderNoteList = function(notes) {
     $li.append($span, $delBtn);
   
     noteListItems.push($li);
-    $li.data = note;
+    // $li.data = note;
 
   }
 

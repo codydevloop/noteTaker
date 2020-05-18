@@ -11,7 +11,6 @@ app.use(express.static("public"));
 
 const PORT = process.env.PORT || 8080;  // Heroku PORT config 
 
-const notesArr = [];
 
 // Routes
 // =============================================================
