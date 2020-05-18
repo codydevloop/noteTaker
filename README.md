@@ -4,6 +4,9 @@
    # Project: noteTaker 
 
    **Key Concepts**
+   app deployed on Heroku
+   https://codydevloop-notetaker.herokuapp.com/
+   
    express.js, routes, full stack application, ajax, GET, POST, DELETE
    
   Project focusing on express.js and creating API and HTML routes.  
