@@ -4,7 +4,8 @@
    # Project: noteTaker 
 
    **Key Concepts**
-   app deployed on Heroku
+   
+   App deployed on Heroku
    
    https://codydevloop-notetaker.herokuapp.com/
    
