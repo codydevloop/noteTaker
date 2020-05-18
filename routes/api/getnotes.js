@@ -9,7 +9,7 @@ router.get("/api/notes", (req, res) => {
             throw err;
         } 
         res.json(JSON.parse(data)); //return all notes to user
-        // console.log(data);
+        console.log("/api/notes GET called");
       });    
 });
 

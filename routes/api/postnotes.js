@@ -38,7 +38,7 @@ router.post("/api/notes", (req, res) => {
             if (err){
                 throw err;
             } 
-            console.log("Success writing file");
+            console.log("Success writing file, API Post");
           });
       }); 
     res.json(newNote); //newNote returned to user

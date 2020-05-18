@@ -26,6 +26,9 @@ app.use("/", getNotesAPI);
 const postNoteAPI = require("./routes/api/postnotes");
 app.use("/", postNoteAPI);
 
+const deleteNoteAPI = require("./routes/api/deletenotes");
+app.use("/", deleteNoteAPI);
+
 
 
 // Listener 
