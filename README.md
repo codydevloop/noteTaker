@@ -1,9 +1,50 @@
-# noteTaker
-note taking app  with focus on using express.js
+![Image last commit badge]( https://img.shields.io/github/last-commit/codydevloop/readMeFileGeneratorApp)
 
-https://codydevloop-notetaker.herokuapp.com/
+   [codydevloop](codydevloop)
+   # Project: noteTaker 
 
+   **Key Concepts**
+   express.js, routes, full stack application, ajax, GET, POST, DELETE
+   
+  Project focusing on express.js and creating API and HTML routes.  
 
+   ## Table of Contents
+   * [Installation](#installation)
+  
+   * [Usage](#usage)
+   
+   * [License](#license)
 
+   * [Contribution/Credits](#Contributions/Credits)
+  
+   * [Testing](#testing)
+ 
+   * [Feature Requests](#Feature-Requests)
+   
+   * [Challenges](#challenges)
+  
+   * [Questions](#questions)
 
-[{"title":"Test Title","text":"Test text","id":"b77015a5-8205-4fca-9c0c-1feaa8e8c71f"},{"title":"Check out this","text":"Cool new feature","id":"1eb3d082-2696-45bc-a6cd-761cf103f33c"}]
+## Installation
+NPM express, uuid   
+## Usage
+from command:  npm install  (for dependencies) then:  node server.js
+## License
+None
+## Contribution/Credits
+n/a
+## Testing
+n/a
+## Feature-Requests
+na/
+## Challenges
+routing, data types between fs.readFile fs.writeFile res.json 
+## Questions/Contact_Me
+You can reache me codydevloop@gmail.com
+[codydevloop](codydevloop)
+## Portfolio
+https://codydevloop.github.io/Portfolio/.
+
+![Image GitHub user](https://avatars3.githubusercontent.com/u/60554516?v=4)
+
+  
