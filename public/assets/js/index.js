@@ -52,8 +52,8 @@ var renderActiveNote = function() {
   } else {
     $noteTitle.attr("readonly", false);
     $noteText.attr("readonly", false);
-    $noteTitle.val("no");
-    $noteText.val("id found");
+    $noteTitle.val("New Note Title");
+    $noteText.val("New Note Body");
   }
 };
 
